@@ -28,6 +28,11 @@ var randomColor5 = new Color(getRandomHex());
 
 var currentPalette;
 
+// var allRandomColors = [randomColor1, randomColor2, etc]
+
+// function that checks if (!randomColor1.isLocked) --> new Color} else
+// 
+
 //--------------------QUERY SELECTORS--------------------
 
 // var allColorBoxes = document.querySelectorAll(".box-input");
@@ -39,7 +44,10 @@ var colorBox5 = document.querySelector("#box5");
 
 //--------------------EVENT LISTENERS--------------------
 
-window.addEventListener("load", updateBoxInput);
+window.addEventListener("load", function () {
+  createNewPalette();
+  updateBoxInput();
+});
 
 
 
@@ -47,12 +55,9 @@ window.addEventListener("load", updateBoxInput);
 
 
 function updateBoxInput() {
-  colorBox1.setAttribute(background, randomColor1.hex)
-  
-//figure out how to .innerHTML var randomColor1 (for example)
 
-  
-  createNewPalette();
+  colorBox1.bgColor = currentPalette.color1;
+
 }
 
 
