@@ -1,0 +1,149 @@
+
+
+.background-container {
+  width:100%;
+  height:100vh;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.main-container {
+  display: flex;
+  width: 100%;
+  height:100vh;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+}
+
+h1 {
+  font-size: 45px;
+  font-family: ;
+  color: ;
+  /* margin: 80px; */
+  justify-content: center;
+}
+
+.box-container {
+  display: flex;
+  /* border: 10px solid #000000; */
+  width: 100%;
+  min-height: 170px;
+  justify-content: space-around;
+
+
+
+}
+.container1,
+.container2,
+.container3,
+.container4,
+.container5 {
+  width: 15%;
+  height: 120px;
+}
+
+.box-input {
+  display:flex;
+  border:2px solid #000000;
+  /* flex-direction:row; */
+  /* justify-content: center; */
+  width:98%;
+  height: 117px;
+  /* align-content: space-around; */
+  justify-content: flex-end;
+  align-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hex-code1,
+.hex-code2,
+.hex-code3,
+.hex-code4,
+.hex-code5 {
+  display: flex;
+  justify-content: flex-end;
+  align-content: center;
+  flex-direction: column-reverse;
+  align-items: center;
+}
+
+.hex-code1 > button > img {
+  width: 15%;
+  height: 5px;
+}
+.container1 {
+  background: #f4f1de;
+}
+
+.container2 {
+  background: #e07a5f;
+}
+
+.container3 {
+  background: #3d405b;
+}
+
+.container4 {
+  background: #81b29a;
+}
+
+.container5 {
+  background: #f2cc8f;
+}
+
+.box-input {
+
+}
+
+h3 {
+  font-size: ;
+  font-family: ;
+  color: #000000;
+}
+
+.button-container {
+  display:flex;
+  justify-content:space-around;
+  width:50%;
+  padding: 50px;
+}
+
+.button {
+  display: flex;
+  align-content: space-around;
+  line-height: 1.5;
+  font-size: 25px;
+  text-align: center;
+  border: 2px solid #000000;
+  width:20%;
+}
+
+}
+.aside > .main-container {
+  margin: 10px
+}
+
+.side-bar-container > h2{
+  font-size: 35px
+  color: #000000;
+  display: flex;
+  margin: 54 0px;
+  justify-content: center;
+  /* border:2px solid #000000; */
+
+}
+
+.side-bar-container {
+  border-left: 10px solid #000000;
+  width: 30%;
+  height:100vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+
+}
