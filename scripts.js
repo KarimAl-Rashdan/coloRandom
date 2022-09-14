@@ -58,9 +58,7 @@ function updateBoxInput() {
 
   colorBox1.bgColor = currentPalette.color1;
 
-}
-
-
+};
 
 
 
