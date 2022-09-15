@@ -26,6 +26,10 @@ var randomColor3 = new Color(getRandomHex());
 var randomColor4 = new Color(getRandomHex());
 var randomColor5 = new Color(getRandomHex());
 
+var allRandomColors
+
+var allColorBoxes = [colorBox1, colorBox2, colorBox3, colorBox4, colorBox5];
+
 var currentPalette;
 
 // var allRandomColors = [randomColor1, randomColor2, etc]
@@ -36,12 +40,13 @@ var currentPalette;
 //--------------------QUERY SELECTORS--------------------
 
 // var allColorBoxes = document.querySelectorAll(".box-input");
-var colorBox1 = document.querySelector(".box-container1");
-var colorBox2 = document.querySelector(".box-container2");
-var colorBox3 = document.querySelector(".box-container3");
-var colorBox4 = document.querySelector(".box-container4");
-var colorBox5 = document.querySelector(".box-container5");
-
+var colorBox1 = document.querySelector("#box1");
+var colorBox2 = document.querySelector("#box2");
+var colorBox3 = document.querySelector("#box3");
+var colorBox4 = document.querySelector("#box4");
+var colorBox5 = document.querySelector("#box5");
+// var boxParent = document.querySelector(".parent-container");
+var boxParent= document.querySelector(".parent-container")
 //--------------------EVENT LISTENERS--------------------
 
 window.addEventListener("load", function () {
@@ -55,15 +60,39 @@ window.addEventListener("load", function () {
 
 
 function updateBoxInput() {
-
-  article.innerHTML +=
+  // for (var i = 1; i < 6; i++) {
+  colorBox1.innerHTML +=
       `
-      <div class="color-box" data-box-color=${hexCode}></div>
-      <p>${hexCode}</p>
+      <div class="color-box" data-box-color=${currentPalette.color1.hex}></div>
+      <p>${currentPalette.color1.hex}</p>
+      <img src=./assets/lock.jpg>
+      `
+  colorBox2.innerHTML +=
+      `
+      <div class="color-box" data-box-color=${currentPalette.color2.hex}></div>
+      <p>${currentPalette.color2.hex}</p>
+      <img src=./assets/lock.jpg>
+      `
+  colorBox3.innerHTML +=
+      `
+      <div class="color-box" data-box-color=${currentPalette.color3.hex}></div>
+      <p>${currentPalette.color3.hex}</p>
+      <img src=./assets/lock.jpg>
+      `
+  colorBox4.innerHTML +=
+      `
+      <div class="color-box" data-box-color=${currentPalette.color4.hex}></div>
+      <p>${currentPalette.color4.hex}</p>
+      <img src=./assets/lock.jpg>
+      `
+  colorBox5.innerHTML +=
+      `
+      <div class="color-box" data-box-color=${currentPalette.color5.hex}></div>
+      <p>${currentPalette.color5.hex}</p>
       <img src=./assets/lock.jpg>
       `
     };
-};
+
 
 //
 
