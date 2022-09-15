@@ -81,7 +81,6 @@ h1 {
   height: 100px;
   width: 100px;
   border: 2px solid black;
-  background-color: attr(data-box-color);
 }
 /* box1,box2,bo3 4 5 */
 
