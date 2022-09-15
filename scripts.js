@@ -31,16 +31,16 @@ var currentPalette;
 // var allRandomColors = [randomColor1, randomColor2, etc]
 
 // function that checks if (!randomColor1.isLocked) --> new Color} else
-// 
+//
 
 //--------------------QUERY SELECTORS--------------------
 
 // var allColorBoxes = document.querySelectorAll(".box-input");
-var colorBox1 = document.querySelector("#box1");
-var colorBox2 = document.querySelector("#box2");
-var colorBox3 = document.querySelector("#box3");
-var colorBox4 = document.querySelector("#box4");
-var colorBox5 = document.querySelector("#box5");
+var colorBox1 = document.querySelector(".box-container1");
+var colorBox2 = document.querySelector(".box-container2");
+var colorBox3 = document.querySelector(".box-container3");
+var colorBox4 = document.querySelector(".box-container4");
+var colorBox5 = document.querySelector(".box-container5");
 
 //--------------------EVENT LISTENERS--------------------
 
@@ -56,10 +56,16 @@ window.addEventListener("load", function () {
 
 function updateBoxInput() {
 
-  colorBox1.bgColor = currentPalette.color1;
-
+  article.innerHTML +=
+      `
+      <div class="color-box" data-box-color=${hexCode}></div>
+      <p>${hexCode}</p>
+      <img src=./assets/lock.jpg>
+      `
+    };
 };
 
+//
 
 
 //--------------------EVENT HANDLERS--------------------
@@ -102,4 +108,3 @@ function getRandomHex() {
           //document.querySelectorAll(".box-input")
           //for loop which iterates through node list of boxes for each:
             //
-
