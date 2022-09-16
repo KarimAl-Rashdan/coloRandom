@@ -39,8 +39,10 @@ function updateBoxInput() {
   for (var i = 0; i < 5; i++) {
   allSwatches[i].innerHTML = `
       <div class="color-box" style="background-color:${currentPalette.colors[i].hex}"></div>
+      <div class="box-label">
       <p>${currentPalette.colors[i].hex}</p>
       <img src="./assets/lock.jpg" id="${currentPalette.colors[i].hex}">
+      </div>
       `
   };
 };
