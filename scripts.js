@@ -40,9 +40,11 @@ window.addEventListener("load", function () {
 function updateBoxInput() {
   for (var i = 0; i < 5; i++) {
   allSwatches[i].innerHTML = `
-      <div class="color-box" id="${currentPalette.colors[i].hex}"style="background-color:${currentPalette.colors[i].hex}"></div>
+      <div class="color-box" id="${currentPalette.colors[i].hex}" style="background-color:${currentPalette.colors[i].hex}"></div>
+      <div class="box-label">
       <p>${currentPalette.colors[i].hex}</p>
       <img src="./assets/unlock.jpg" id="${currentPalette.colors[i].hex}">
+      </div>
       `
   };
 };
