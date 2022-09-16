@@ -28,20 +28,6 @@ var randomColor5 = new Color(getRandomHex());
 
 var randomColors = [randomColor1, randomColor2, randomColor3, randomColor4, randomColor5];
 
-function displayNewColors() {
-  createNewRandomColors();
-  currentPalette.updatePalette()
-  updateBoxInput();
-};
-
-function createNewRandomColors() {
-  for (var i = 0; i < currentPalette.colors.length; i++) {
-    if (!currentPalette.colors[i].isLocked) {
-      randomColors[i] = new Color(getRandomHex())
-    };
-  };
-};
-
 var currentPalette;
 
 //--------------------QUERY SELECTORS--------------------
@@ -59,7 +45,11 @@ window.addEventListener("load", function () {
   addLockListeners();
 });
 
-newPaletteButton.addEventListener("click", displayNewColors);
+newPaletteButton.addEventListener("click", function () {
+  createNewRandomColors();
+  currentPalette.updatePalette();
+  updateBoxInput();
+});
 
 //--------------------DOM--------------------
 
@@ -106,6 +96,14 @@ var targetInstance = eval(event.target.dataset.colorInstance);
       targetInstance.isLocked = true;
       randomColors[i].isLocked = true;
       allLocks[i].src = "./assets/lock.jpg";
+    };
+  };
+};
+
+function createNewRandomColors() {
+  for (var i = 0; i < currentPalette.colors.length; i++) {
+    if (!currentPalette.colors[i].isLocked) {
+      randomColors[i] = new Color(getRandomHex())
     };
   };
 };
