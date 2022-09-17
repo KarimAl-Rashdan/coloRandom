@@ -52,7 +52,7 @@ newPaletteButton.addEventListener("click", displayNewPalette);
 
 savedPaletteButton.addEventListener("click", savePalette);
 
-
+asideContainer.addEventListener("click", deletePalette);
 
 //--------------------DOM--------------------
 
@@ -129,19 +129,27 @@ function showSavedPalette() {
         <div class="mini-palette" style="background-color:${savedPalettes[i].colors[2].hex}"></div>
         <div class="mini-palette" style="background-color:${savedPalettes[i].colors[3].hex}"></div>
         <div class="mini-palette" style="background-color:${savedPalettes[i].colors[4].hex}"></div>
-        <img class="trash-can" src="./assets/trash-can-icon.jpeg" data-palette-instance="">
+        <img class="trash-can" src="./assets/trash-can-icon.jpeg" id="${savedPalettes[i].id}">
       </div>
       `
-    }
-}
+    };
+};
 
+function deletePalette(event) {
+  for (var i = 0; i < savedPalettes.length; i++){
+    if(eval(event.target.id) === savedPalettes[i].id){
+    savedPalettes.splice(i, 1);
+    };
+  };
+  showSavedPalette();
+};
 
 function displayNewPalette() {
   createNewRandomColors();
   currentPalette.updatePalette();
   updateBoxInput();
 };
-//Just need to display the saved palette in the saved palettes section
+
 
 //--------------------MISC FUNCTIONS--------------------
 
