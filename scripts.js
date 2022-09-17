@@ -29,11 +29,14 @@ var randomColor5 = new Color(getRandomHex());
 var randomColors = [randomColor1, randomColor2, randomColor3, randomColor4, randomColor5];
 
 var currentPalette;
+var savedPalettes = [];
 
 //--------------------QUERY SELECTORS--------------------
 
 var allSwatches = document.querySelectorAll(".swatches");
 var newPaletteButton = document.querySelector(".new-palette-button")
+var savedPaletteButton = document.querySelector(".save-palette-button")
+var asideContainer = document.querySelector(".saved-palettes")
 
 var allLocks;
 
@@ -45,11 +48,11 @@ window.addEventListener("load", function () {
   addLockListeners();
 });
 
-newPaletteButton.addEventListener("click", function () {
-  createNewRandomColors();
-  currentPalette.updatePalette();
-  updateBoxInput();
-});
+newPaletteButton.addEventListener("click", displayNewPalette);
+
+savedPaletteButton.addEventListener("click", savePalette);
+
+
 
 //--------------------DOM--------------------
 
@@ -107,6 +110,38 @@ function createNewRandomColors() {
     };
   };
 };
+
+function savePalette() {
+  var newPalette = new Palette(currentPalette.colors[0], currentPalette.colors[1],
+  currentPalette.colors[2], currentPalette.colors[3], currentPalette.colors[4]);
+  savedPalettes.push(newPalette);
+  showSavedPalette()
+  displayNewPalette();
+};
+
+function showSavedPalette() {
+  asideContainer.innerHTML = ""
+  for(var i = 0; i < savedPalettes.length; i++) {
+    asideContainer.innerHTML += `
+      <div class="palette-details">
+        <div class="mini-palette" style="background-color:${savedPalettes[i].colors[0].hex}"></div>
+        <div class="mini-palette" style="background-color:${savedPalettes[i].colors[1].hex}"></div>
+        <div class="mini-palette" style="background-color:${savedPalettes[i].colors[2].hex}"></div>
+        <div class="mini-palette" style="background-color:${savedPalettes[i].colors[3].hex}"></div>
+        <div class="mini-palette" style="background-color:${savedPalettes[i].colors[4].hex}"></div>
+        <img class="trash-can" src="./assets/trash-can-icon.jpeg" data-palette-instance="">
+      </div>
+      `
+    }
+}
+
+
+function displayNewPalette() {
+  createNewRandomColors();
+  currentPalette.updatePalette();
+  updateBoxInput();
+};
+//Just need to display the saved palette in the saved palettes section
 
 //--------------------MISC FUNCTIONS--------------------
 
